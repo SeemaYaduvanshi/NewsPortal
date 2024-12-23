@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+    <div class="text-center fs-2 ">ABOUT<b class="txt-mycolor" > &nbsp; Us</b></div>
+
+<div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-6 ps-5">
+
+                    <p>Welcome to <b>Media 24X7,</b>  your trusted source for the latest news and updates from around the world. We are dedicated to delivering timely and accurate news to our readers, covering a wide range of topics from politics to entertainment.</p>
+                    <p>At Our News, we believe in the power of information to inform, inspire, and engage. Our team of experienced journalists and editors is committed to providing you with in-depth, well-researched, and balanced news stories.</p>
+                    <p>Join us on our journey to stay informed, make sense of the world, and become part of a community that values quality journalism.</p>
+                </div>
+                <div class="col-lg-6">
+                    <!--<img src="about-us-image.jpg" alt="About Us Image" class="img-fluid rounded-circle">-->
+                </div>
+            </div>
+        </div>
+                <!--our team-->
+        <div class="container bg-light">
+            <h4 class="text-center">Our <b class="txt-mycolor" >Team</b>  </h4>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/rahul sir.png'%}" height="350px" alt="Team Member 1" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Mr.Rahul Soni</h5>
+                            <p class="card-text">Editor-in-Chief</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/divya mam.png'%}" height="350px" alt="Team Member 2" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Mrs.Divya</h5>
+                            <p class="card-text">Senior Reporter</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static 'images/yadav2.png'%}" height="350px" alt="Team Member 3" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Seema Yadav</h5>
+                            <p class="card-text">Photographer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock %}

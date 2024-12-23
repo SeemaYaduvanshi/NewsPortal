@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block childpage %}
+<div class="text-center fs-2 ">News
+    <b class="txt-mycolor" >Details </b></div>
+
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <!-- News Details-->
+
+ {% for x in newsdata%}
+        <div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{x.news_picture}}" class="img-fluid rounded-start" alt="...">
+    </div>
+
+ <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{x.news_headlines}}</h5>
+        <p class="card-text" style="text-align:justify;">{{x.news_description}} </p>
+        <p class="card-text">{{x.news_category}} </p>
+        <p class="card-text"><small class="text-body-secondary">
+           <i class="fa-solid fa-calendar-days"></i>
+            {{x.news_date}}
+            <i class="fa-solid fa-city"></i>
+            {{x.news_city}}
+        </small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+         {% endfor %}
+
+        <!-- End News Details-->
+
+
+
+            {% for x in vdata%}
+    <!--Videos news-->
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card mb-3" >
+  <div class="row g-0">
+    <div class="col-md-5">
+      <iframe style="min-height:300px;" class="img-fluid rounded-start w-100" src={{x.vlink}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="col-md-7">
+      <div class="card-body">
+        <h5 class="card-title">{{x.vcategory}}</h5>
+        <p class="card-text"><b>{{x.headlines}}</b></p>
+        <p class="card-text">{{x.news}}</p>
+
+
+        <p class="card-text"><small class="text-body-secondary">
+            <i class="fa-solid fa-calendar-days"></i>
+            {{x.newsdate}}
+            <i class="fa-solid fa-city"></i>
+            {{x.newscity}}
+            </small></p>
+    </div>
+  </div>
+</div>
+
+        </div>
+    </div>
+    <!--end Videos news-->
+        {% endfor %}
+
+
+
+    </div>
+</div>
+
+
+{% endblock %}

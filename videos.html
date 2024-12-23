@@ -1,0 +1,61 @@
+{% extends 'base.html'%}
+
+{% block childpage %}
+
+<div class="text-center fs-2 "><b class="txt-mycolor" >OUR VIDEOS</b></div>
+
+<div class="row text-align">
+
+    <div class="col-sm-6 p-4">
+        {% for i in cdata %}
+        <a href="/user/videos?catid={{i.id}}" class="badge bg-dark rounded-pill" style="text-decoration:none;">{{i.category_name}}</a>
+        {% endfor %}
+    </div>
+
+    <div class="col-sm-6 p-4">
+        {% for i in ctdata %}
+        <a href="/user/videos?cityid={{i.id}}" class="badge bg-dark rounded-pill" style="text-decoration:none;">{{i.city_name}}</a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="row news p-4">
+
+    {% for x in vdata%}
+    <!--Videos news-->
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="card mb-3" >
+  <div class="row g-0">
+    <div class="col-md-5">
+      <iframe height="300px;" class="img-fluid rounded-start w-100" src={{x.vlink}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="col-md-7">
+      <div class="card-body">
+        <h5 class="card-title"><b>{{x.vcategory}}</b></h5>
+        <p class="card-text">{{x.headlines}}</p>
+          <a href="/user/viewnews?xyz={{x.id}}" class="btn btn-sm  bg-mycolor text-light mt-2">View More
+                        <i class="fa-solid fa-eye"></i>
+          </a>
+
+        <p class="card-text"><small class="text-body-secondary">
+            <i class="fa-solid fa-calendar-days"></i>
+            {{x.newsdate}}
+            <i class="fa-solid fa-city"></i>
+            {{x.newscity}}
+            </small></p>
+    </div>
+  </div>
+</div>
+
+        </div>
+    </div>
+    <!--end Videos news-->
+        {% endfor %}
+
+
+
+</div>
+
+
+
+{% endblock %}

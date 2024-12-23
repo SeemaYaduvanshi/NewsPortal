@@ -1,0 +1,129 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block childpage %}
+
+
+<style>
+.a
+{
+ min-height:500px;
+}
+.location
+{
+ min-height:100px;
+
+}
+.img
+{
+ background:url("{% static 'images/dark.webp' %}");
+ background-size:100% 100%;
+
+}
+.s
+{
+  padding:10% 20%;
+  margin-right:5%;
+  margin-left:2%;
+  box-shadow:0px 0px 5px 3px grey,
+  0px 0px 5px 3px rgba(255,255,255,0.3);
+
+}
+
+</style>
+
+<div class="container-fluid">
+
+
+ <div class="row img ">
+     
+<p class="fs-2 text-center text-light"> <b> Contact</b> <b class="text-danger">Us</b> </p>
+<p class=" text-center text-light">Please fill out the quick form and will be in touch with lightening speed.</p>
+
+    <!-- details  about loction etc. -->
+   <div class="col-sm-5 text-light a pt-5">
+
+   <div class="row  location">
+   <div class="col-sm-3 pt-4 ps-5 "><i class="fa-solid fs-1 fa-location-dot "></i></div>
+   <div class="col-sm-9  pt-2 text-center"><b class="text-danger fs-4">ADDRESS</b>
+     <p>Singhariya,Rapti Nagar Phase-4<br/> Gorakhpur,UP 273202</p>
+
+   </div>
+   </div>
+
+
+   <div class="row location ">
+    <div class="col-sm-3 pt-4 ps-5"><i class="fa-solid fs-1 fa-paperclip"></i></div>
+   <div class="col-sm-9 pt-2 text-center"> <b class="text-danger fs-4">Connect with us</b>
+    <p>For support or any question Email us at: seema7974yadav@gmail.com</p>
+   </div>
+   </div>
+
+
+   <div class="row location ">
+    <div class="col-sm-3 pt-4 ps-5"><i class="fa-solid fs-1 fa-phone"></i> </div>
+   <div class="col-sm-9 text-center pt-4"> <b class="text-danger fs-4">Call </b><p>+91 8175067291</p></div>
+   </div>
+
+
+
+   </div>
+
+
+   <!--end details about loction etc. -->
+
+
+
+
+
+   <!-- login  form  start-->
+   <div class="col-sm-7 a pt-5">
+
+   <div class="row text-bg-light s " style="min-height:390px;">
+   <form method="post">
+       {% csrf_token %}
+    <table>
+	<tr>
+	<td>Name</td>
+	<td><input type="text" name="name" class="form-control" required placeholder="Enter your name" /> </td>
+	</tr>
+
+	<tr>
+	<td>Mobile No.</td>
+	<td><input type="number" name="mobile" class="form-control"  required placeholder="Enter your number" /> </td>
+	</tr>
+
+	<tr>
+	<td>Email</td>
+	<td><input type="email" name="email" class="form-control"  required placeholder="Enter your email" /> </td>
+	</tr>
+
+    <tr>
+	<td>Message</td>
+	<td><textarea type="text" class="form-control" name="msg" required placeholder="message..."> </textarea> </td>
+	</tr>
+	<tr class="text-center"  >
+	<td style="padding-left:50%; padding-top:5%;"><input type="submit" value="save" class="btn btn-outline-danger"/></td>
+	</tr>
+
+
+   </table>
+   </form>
+
+   </div>
+
+   </div>
+
+   <!-- login form end -->
+
+ </div>
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}
